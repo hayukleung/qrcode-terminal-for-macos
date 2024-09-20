@@ -1,21 +1,29 @@
-# qrshot
+# qrcode terminal for macos
 Decode QR code on screen, or encode a string then echo QR code on terminal for MacOS.
 
 ## Usage
 
 ### Decode
 
-Run `qrshot` in terminal, use mouse to select QR code area on screen.
+Run `qrcode` in terminal, use mouse to select QR code area on screen.
+
+```
+$ qrcode
+```
 
 ### Encode
 
 ```
-$ qrshot "Sample string"
+$ qrcode "sample string"
 ```
-![encoding screenshot](encode.png)
 
 ## Dependencies
 
-- screencapture
-- zbarimg
-- qrcode-terminal
+- screencapture (for macos: /usr/sbin/screencapture)
+- zbarimg (homebrew)
+- qrcode-terminal (npm)
+
+### Installation
+
+1. npm -g install qrcode-terminal
+2. brew install zbar
