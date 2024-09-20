@@ -1,0 +1,19 @@
+#!/bin/bash
+
+if [[ ! "$1" ]]; then
+
+    TMPDIR=~/.qrcode
+    if [ ! -d $TMPDIR ]; then
+        mkdir $TMPDIR
+    fi
+
+    cd "$TMPDIR"
+
+    echo Use mouse select an area on screen to decode QR
+    echo ""
+
+    screencapture -i $TMPDIR/temp.png && zbarimg $TMPDIR/temp.png
+
+else
+    qrcode-terminal "$1"
+fi
